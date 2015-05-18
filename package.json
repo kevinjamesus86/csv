@@ -1,0 +1,15 @@
+{
+  "name": "csv",
+  "repository": "kevinjamesus86/csv",
+  "description": "simple csv parser",
+  "version": "1.0.0",
+  "author": "Kevin James",
+  "keywords": ["csv", "parser"],
+  "devDependencies": {
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.8",
+    "karma-jasmine": "^0.3.5"
+  },
+  "license": "MIT"
+}
