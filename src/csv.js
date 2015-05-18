@@ -31,7 +31,7 @@ var csv = (function() {
     for (; EOFIndex ;) {
 
       // quoted field
-      if (charAt(index) === QUOTE) {
+      if (QUOTE === charAt(index)) {
 
         // field start index without opening quote
         beginCaptureIndex = index + 1;
