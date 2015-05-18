@@ -22,7 +22,7 @@ csv.parse(
 Option | Default | Description
 ------ | ------- | -----------
 delimiter | `,` | Field delimiting character
-newline | `\r` | Row terminating character
+newline | `\n` | Row terminating character
 
 # License
 
