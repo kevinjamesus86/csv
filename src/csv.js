@@ -92,21 +92,21 @@ var csv = (function() {
         row.push(input.substring(index, index = endCaptureIndex));
       }
 
-      if (isEOF()) {
+      if (DELIMITER === chars(DELIMITER_LENGTH)) {
+        // advance index past the delimiter and continue processing
+        index += DELIMITER_LENGTH;
+      } else if (NEW_LINE === chars(NEW_LINE_LENGTH) || isEOF()) {
+        // save it
         saveRow();
-        // BAIL OUT
-        break;
-      } else if (NEW_LINE === chars(NEW_LINE_LENGTH)) {
-        saveRow();
-        // advance index past the newline and continue processing
+
+        // advance index past the newline (if there was one)
         index += NEW_LINE_LENGTH;
-        // sanity check for last line
+
+        // we were already at the end of the feed, or advancing the index
+        // past the newline put us there. We've already saved the row, bail out.
         if (isEOF()) {
           break;
         }
-      } else if (DELIMITER === chars(DELIMITER_LENGTH)) {
-        // advance index past the delimiter and continue processing
-        index += DELIMITER_LENGTH;
       }
 
     }
