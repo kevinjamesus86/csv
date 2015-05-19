@@ -2,7 +2,7 @@
   "name": "csv",
   "repository": "kevinjamesus86/csv",
   "description": "simple csv parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Kevin James",
   "keywords": ["csv", "parser"],
   "devDependencies": {
