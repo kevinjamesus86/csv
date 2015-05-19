@@ -28,7 +28,7 @@ var csv = (function() {
     var rows = [];
     var row = [];
 
-    for (; EOFIndex ;) {
+    if (EOFIndex) for (;;) {
 
       // quoted field
       if (QUOTE === charAt(index)) {
