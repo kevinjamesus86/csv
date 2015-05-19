@@ -51,6 +51,7 @@ var csv = (function() {
           } else {
 
             // booo: improperly escaped field. move to EOF and add
+            // a char so we capture the remainder of the input
             index = EOFIndex + 1;
             break;
           }

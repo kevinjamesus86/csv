@@ -141,6 +141,7 @@ describe('csv.parse(input)', function() {
     ]
   });
 
+  spec('quoted field with missing terminal quote consumes remaining input', {
     i: 'a,"b,c\n',
     o: [
       ['a', 'b,c\n']
