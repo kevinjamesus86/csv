@@ -36,14 +36,25 @@ var csv = (function() {
         // field start index without opening quote
         beginCaptureIndex = index + 1;
 
-        // consume string until we find a quote or reach the EOF
-        while (isEOF() ? false : QUOTE === charAt(++index) ?
-          // true  (continue) : next char is a quote, this is an escaped quote / part of the data
-          // false (stop)     : next char is not a quote, we found the fields terminating quote
-          QUOTE === charAt(++index) :
-          // was not a quote, keep going
-          true
-          ){}
+        for (;;) {
+
+          // find the next quote
+          index = input.indexOf(QUOTE, index + 1);
+
+          // found a quote
+          if (~index) {
+
+            // terminal quote if not escaped
+            if (QUOTE !== charAt(++index)) {
+              break;
+            }
+          } else {
+
+            // booo: improperly escaped field, move to EOF
+            index = EOFIndex;
+            break;
+          }
+        }
 
         // field end index without closing quote
         endCaptureIndex = index - 1;
