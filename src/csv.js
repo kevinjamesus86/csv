@@ -50,8 +50,8 @@ var csv = (function() {
             }
           } else {
 
-            // booo: improperly escaped field, move to EOF
-            index = EOFIndex;
+            // booo: improperly escaped field. move to EOF and add
+            index = EOFIndex + 1;
             break;
           }
         }

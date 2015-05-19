@@ -141,6 +141,12 @@ describe('csv.parse(input)', function() {
     ]
   });
 
+    i: 'a,"b,c\n',
+    o: [
+      ['a', 'b,c\n']
+    ]
+  });
+
   spec('quoted field with quotes around delimiter', {
     i: 'a,""",""",c',
     o: [
